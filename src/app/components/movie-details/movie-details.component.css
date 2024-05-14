@@ -1,0 +1,26 @@
+section {
+    margin-block: 20px;
+}
+mat-icon {
+    color: gold;
+}
+h1, h3 {
+    font-weight: bold;
+}
+img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+.trailer {
+    height: 500px;
+    margin-bottom: 20px;
+}
+.divider {
+    display: inline-block;
+    width: 2px;
+    height: 18px;
+    background: #000;
+    position: relative;
+    top: 4px;
+}

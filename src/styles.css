@@ -1,0 +1,30 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body { 
+    min-height: 100svh; 
+}
+
+body {
+    font-family: Roboto, "Helvetica Neue", sans-serif; 
+}
+
+.container {
+    width: 80%;
+    margin-inline: auto;
+}
+
+.dark-theme {
+    background-color: #192d44;
+    color: #eee;
+}
+
+@media screen and (max-width: 500px) {
+    .container {
+        width: 100%;
+        padding-inline: 10px;
+    }
+}

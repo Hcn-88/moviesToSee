@@ -1,0 +1,39 @@
+<div fxLayout fxLayoutAlign="end none">
+    <button mat-raised-button color="primary" [routerLink]="['/']">Back to Home Page</button>
+</div>
+<section fxLayout fxLayout.lt-sm="column" fxLayoutAlign="space-between" fxLayoutGap="15px">
+    <div fxLayout="column" fxFlex="100%" fxFlex.sm="50%" fxFlex.gt-sm="70%">
+        <div fxLayout fxLayoutAlign="space-between center">
+            <h1>{{ movieDetails.title }}</h1>
+            <div fxLayout fxLayoutAlign="none center">
+                <mat-icon aria-hidden="false" fontIcon="star"></mat-icon>
+                <span>{{ movieDetails.rating }}/10</span>
+            </div>
+        </div>
+        <p>{{ movieDetails.description }}</p>
+        <div fxLayout="column" fxLayout.gt-sm="row" fxLayoutGap="10px">
+            <h3>{{ movieDetails.genre }}</h3>
+            <span class="divider" #span></span>
+            <h3>{{ movieDetails.duration }}</h3>
+            <span class="divider" #span></span>
+            <h3>{{ movieDetails.releaseDate }}</h3>
+        </div>
+        @if (isInWatchlist(movieDetails)) {
+            <div fxLayout fxLayoutAlign="none center" fxLayoutGap="15px">
+                <span><strong>Already watched it? Remove it from your watchlist</strong></span>
+                <button mat-raised-button color="warn" (click)="removeMovie(movieDetails.id)">Remove</button>
+            </div>
+        } @else {
+            <div fxLayout fxLayoutAlign="none center" fxLayoutGap="15px">
+                <span><strong>Like it? Add it to your watchlist</strong></span>
+                <button mat-raised-button  color="primary" (click)="addMovie(movieDetails)">Add</button>
+            </div>
+        }
+    </div>
+    <div fxFlex="100%" fxFlex.sm="50%" fxFlex.gt-sm="30%">
+        <img [src]="movieDetails.imagePath" [alt]="movieDetails.title">
+    </div>
+</section>
+<div class="trailer">
+    <iframe width="100%" height="100%" [src]="safeUrl" frameborder="0" allowfullscreen></iframe>
+</div>
